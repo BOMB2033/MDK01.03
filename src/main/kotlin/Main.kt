@@ -4,7 +4,6 @@ fun main(args: Array<String>) {
         when (readln().toInt()) {
             1 -> task1()
             2 -> task2()
-            3 -> task3()
         }
     }
 }
@@ -36,24 +35,24 @@ fun agoToText(sec:Int):String
 
 fun task2()
 {
-    print("Введите число: ")
-    val string = readln().toCharArray()
-    val result = if (string[string.lastIndex] == '1') "человеку" else "людям"
-    println("Понравилось ${string.concatToString()} $result")
+    print("Введите сумму предыдущих переводов в этом месяце : ")
+    val sumMonth = readln().toFloat()
+    print("Введите сумму перевода: ")
+    val sum = readln().toFloat()
+    print("1.MasterCard\n2.Maestro\n3.Visa\n4.Мир\n5.VK Pay\nВыберите тип карты (номер): ")
+    val typeCard = readln().toInt()
+
+    println("Комиссия составит: ${fee(sumMonth,sum,typeCard)} рублей")
+    if (fee(sumMonth,sum,typeCard) != "отказ операции")
+        println("Итог: ${sum.minus(fee(sumMonth,sum,typeCard).toFloat())} рублей")
 }
-fun task3()
+
+fun fee(sumMonth:Float, sum:Float, typeCard:Int):String
 {
-    print("Постоянный ли клиент? (Да/Нет): ")
-    val str = readln().lowercase()
-    val constant = str=="да"
-    print("Сумма покупки: ")
-    var sum = readln().toFloat()
-    var result = when(sum)
+    when(typeCard)
     {
-        in 0f..1_000f -> sum
-        in 1_001f..10_000f -> sum-100f
-        else -> sum-sum*0.05f
+        1,2 -> return if(sumMonth in 300.0..75_000.0) if(sumMonth < 600_000) "0" else "отказ операции" else if(sumMonth < 600_000) (sum*0.006F+20F).toString() else "отказ операции"
+        3,4 -> if(sum > 35F) return if(sumMonth <600_000) (sum*0.0075F).toString() else return "отказ операции" else return "отказ операции"
+        else -> return if (sumMonth > 40_000F || sum >15_000) "отказ операции" else "0"
     }
-    result -= if(constant) result*0.01f else 0f
-    println("Сумма составит $result")
 }
