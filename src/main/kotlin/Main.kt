@@ -1,20 +1,39 @@
 fun main(args: Array<String>) {
-    print("Введите номер задачи: ")
-    when(readln().toInt())
-    {
-        1 -> task1()
-        2 -> task2()
-        3 -> task3()
+    while (true) {
+        print("Введите номер задачи: ")
+        when (readln().toInt()) {
+            1 -> task1()
+            2 -> task2()
+            3 -> task3()
+        }
     }
 }
 fun task1()
 {
-    print("Введите сумму перевода: ")
-    val amount = readln().toInt()
-    val result:Float = if (amount >= 35) amount * 0.0075f else 0f
-    println("Комиссия составит: $result рублей")
-    println("Итог: ${amount.minus(result)} рублей")
+    print("Сколько секунд прошло: ")
+    println("быд(а) ${agoToText(readln().toInt())}")
 }
+fun agoToText(sec:Int):String
+{
+    when(sec)
+    {
+        in 0..60 -> return "только что"
+        in 61..3600 -> return when(sec/60){
+            1,21,31,41,51 -> "${sec/60} минуту назад"
+            2,22,32,42,52,3,23,33,43,53,4,24,34,44,54 -> "${sec/60} минуты назад"
+            else -> "${sec/60} минут назад"
+        }
+        in 3600+1..24*3600 -> return when(sec/3600){
+            1,21 -> "${sec/3600} час назад"
+            2,22,3,23,4,24 -> "${sec/3600} часа назад"
+            else -> "${sec/3600} часов назад"
+        }
+        in 3600*24+1..3600*24*2 -> return "вчера"
+        in 3600*24*2+1..3600*24*3 -> return "позавчера"
+        else -> return "давно"
+    }
+}
+
 fun task2()
 {
     print("Введите число: ")
