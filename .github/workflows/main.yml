@@ -20,7 +20,7 @@ jobs:
       - name: chmod +x ./gradlew
         run: chmod +x ./gradlew
       - name: Build Module Pr7
-        run: ./gradlew :app:assembleDebug 
+        run: ./gradlew :pr7:assembleDebug 
         
       - name: Archive APK files
         run: |
