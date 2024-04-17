@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Практическая 7</string>
+    <string name="todo">TODO</string>
+    <string name="pressed">Нажатий:</string>
+</resources>

@@ -1,0 +1,10 @@
+<resources>
+    <style name="Base.Theme.MDK0103" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <style name="Theme.MDK0103" parent="Base.Theme.MDK0103" />
+
+
+</resources>
+
