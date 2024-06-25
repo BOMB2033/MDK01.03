@@ -113,3 +113,30 @@ jobs:
         with:
           name: apks
           path: apk/
+
+  Build-Module-Pr11:
+    runs-on: ubuntu-20.04
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v1
+        with:
+          java-version: 17
+      - name: chmod +x ./gradlew
+        run: chmod +x ./gradlew
+      - name: Build Module Pr11
+        run: ./gradlew :pr11:assembleDebug
+
+      - name: Archive APK files
+        run: |
+          mkdir -p apk
+          cp pr11/build/outputs/apk/debug/pr11-debug.apk apk/
+
+      - name: Upload Build Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: apks
+          path: apk/
