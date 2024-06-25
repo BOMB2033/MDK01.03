@@ -9,6 +9,7 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/pr10" />
             <option value="$PROJECT_DIR$/pr7" />
             <option value="$PROJECT_DIR$/pr8" />
             <option value="$PROJECT_DIR$/pr9" />

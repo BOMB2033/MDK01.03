@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Pr10</string>
+    <string name="Add_Note">Напишите заметку</string>
+    <string name="Next_Note">Другая заметка</string>
+</resources>
