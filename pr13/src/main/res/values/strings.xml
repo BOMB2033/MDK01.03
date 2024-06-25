@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Практическая 13</string>
+    <string name="popup_menu_item_1">Popup menu item 1</string>
+    <string name="popup_menu_item_2">Popup menu item 2</string>
+    <string name="popup_menu_item_3">Popup menu item 3</string>
+    <string name="Submenu">Подменю</string>
+    <string name="popup_menu_item_4">Popup menu item 4</string>
+    <string name="popup_menu_title_5">Popup menu title 5</string>
+    <string name="popup_menu_item_6">Popup menu item 6</string>
+    <string name="popup">Работа с PopUp</string>
+    <string name="click_on_me">Нажми на меня!</string>
+</resources>
