@@ -22,3 +22,4 @@ dependencyResolutionManagement {
 rootProject.name = "MDK01.03"
 include(":pr7")
 include(":pr8")
+include(":pr9")
